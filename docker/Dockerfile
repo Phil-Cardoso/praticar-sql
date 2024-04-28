@@ -11,6 +11,7 @@ RUN git clone https://github.com/Phil-Cardoso/praticar-sql.git /app
 WORKDIR /app
 
 # Instalando as dependências
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Executando o script starwars_api.py
