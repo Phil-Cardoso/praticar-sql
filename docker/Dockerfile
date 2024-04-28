@@ -14,4 +14,4 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 # Executando o script starwars_api.py
-CMD ["python", "starwars_api/starwars_api.py"]
+CMD ["python", "starwars_api.py"]
