@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3307:3306"
+    networks:
+      - PHIL
+
+  starwars_api:
+    build:
+      context: .
+    container_name: starwars-api
+    networks:
+      - PHIL
+
+networks:
+  PHIL:
+    driver: bridge
