@@ -129,7 +129,7 @@ class ApiStarWars():
         db_config = {
             'user': self.user_mysql,
             'password': self.password_mysql,
-            'host': 'localhost',
+            'host': 'sql',
             'port': self.port
         }
 
