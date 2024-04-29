@@ -5,6 +5,7 @@ import os
 import pandas as pd
 from tabulate import tabulate
 from sqlalchemy import create_engine
+from time import sleep
 
 class ApiStarWars():
 
@@ -115,6 +116,24 @@ class ApiStarWars():
         
             
 
+    def testar_conexao(self):
+        
+        db_config = {
+            'user': self.user_mysql,
+            'password': self.password_mysql,
+            'host': self.host,
+            'port': self.port
+        }
+
+        while True:
+            try:
+                conn = mysql.connector.connect(**db_config)
+                conn.close()                
+                print('Conectado ao banco')
+                break
+            except:
+                print('Tentando conectar no banco.')
+                sleep(1)
 
     def listar_links(self):
         # Batendo na API
@@ -184,5 +203,6 @@ if __name__ == '__main__':
     print('Esperando subir o banco.')
     url_api = 'https://swapi.py4e.com/api'
     api = ApiStarWars(url_api)
+    api.testar_conexao()
     api.listar_links()
     api.popular_banco('star_wars', tentativas=10)
