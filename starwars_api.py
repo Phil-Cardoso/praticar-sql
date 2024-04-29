@@ -200,7 +200,6 @@ class ApiStarWars():
 
 
 if __name__ == '__main__':
-    print('Esperando subir o banco.')
     url_api = 'https://swapi.py4e.com/api'
     api = ApiStarWars(url_api)
     api.testar_conexao()
