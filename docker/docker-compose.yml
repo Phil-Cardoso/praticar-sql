@@ -17,7 +17,6 @@ services:
     container_name: starwars-api
     networks:
       - PHIL
-    command: tail -f /dev/null
 
 networks:
   PHIL:
