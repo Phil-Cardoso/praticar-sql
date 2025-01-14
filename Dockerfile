@@ -4,11 +4,11 @@ FROM python:3.9
 # Instalando o git
 RUN apt-get update && apt-get install -y git
 
-# Clonando o repo
-RUN git clone https://github.com/Phil-Cardoso/praticar-sql.git /app
-
 # Definindo o diretório de trabalho
 WORKDIR /app
+
+# Copiando a pasta atual para o container
+COPY . /app
 
 # Instalando as dependências
 RUN pip install --upgrade pip
